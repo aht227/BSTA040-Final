@@ -31,6 +31,17 @@ std_ili = np.std(df_state["ili"]) #Calculates standard deviation
 st.write(f"Mean ILI: {mean_ili:.2f}") #Shows mean to two decimal places
 st.write(f"Median ILI: {median_ili:.2f}") #Shows median
 
+#Header for Time Series Plot Description
+st.subheader("Description: %ILI Over Time")
+
+#Adds a textbox for time series explanation
+st.markdown("""
+This time series plot shows the weekly percentage of patients with influenza like illness (%ILI) in the selected
+state. Peaks in the plot represent flu seasons that occur throughout the year. The x-axis represents weeks since
+the beginning of the data and the y-axis shows ILI percentages. The recurring on and off pattern suggests that
+the flu follows a seasonal trend and can be modeled over time.
+""")
+
 #Create a figure and axis for histgoram of ILI percent
 fig, ax = plt.subplots() 
 ili_vals = df_state["ili"].dropna() #get ILI values for selected state and remove missing data
@@ -53,17 +64,6 @@ ax.set_title(f"Histogram of %ILI and Exponential Fit ({selected_state.upper()})"
 ax.legend() #add legend
 st.subheader("Histogram of %ILI with Exponential Overlay") #add subheader for the plot 
 st.pyplot(fig)# display in Streamlit
-
-#Header for Time Series Plot Description
-st.subheader("Description: %ILI Over Time")
-
-#Adds a textbox for time series explanation
-st.markdown("""
-This time series plot shows the weekly percentage of patients with influenza like illness (%ILI) in the selected
-state. Peaks in the plot represent flu seasons that occur throughout the year. The x-axis represents weeks since
-the beginning of the data and the y-axis shows ILI percentages. The recurring on and off pattern suggests that
-the flu follows a seasonal trend and can be modeled over time.
-""")
 
 #Header for description of histogram and exponential fit  
 st.subheader("Description: Histogram of %ILI with Exponential Overlay") 
