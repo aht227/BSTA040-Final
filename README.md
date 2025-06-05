@@ -1,5 +1,5 @@
 Ahmad Tariq
-BSTA040 Final Project – Spring 2025
+Data Exploration in Python (BSTA040) Final Project – Spring 2025
 Lehigh University
 
 Created a Streamlit app that lets users explore trends in influenza-like illness (ILI) across U.S. states from 2010–2025 using CDC data.
